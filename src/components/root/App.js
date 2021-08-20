@@ -14,7 +14,7 @@ function App() {
           <AuthProvider>
             <Switch>
               <Route path="/register" component={Register} />
-              <Route path="/" component={Login} />
+              <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />
             </Switch>
           </AuthProvider>
