@@ -1,0 +1,39 @@
+.login{
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 20px;
+    background: #FFFFFF;
+    display: flex;
+    background:url('/src/components/images/welcome.png');
+    background-repeat :no-repeat;
+    background-position: bottom left;
+    background-size:30%;
+    
+}
+
+.login .login-form{
+    padding: 25px 40PX;
+    margin: auto;
+    width: 100%;
+    max-width: 450px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FFFFFF;
+    box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
+}
+
+.login .login-form .input{
+    padding: 15px 10px;
+    border-radius: 40px;
+    margin: 5px;
+}
+
+.login .login-form .button{
+    padding: 15px 10px;
+    background-color: #5AAC44;
+    width: 100%;
+    border-radius: 40px;
+    margin: 5px;
+}

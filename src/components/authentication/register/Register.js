@@ -2,7 +2,9 @@ import React, { useRef, useState } from "react";
 import { Button, Form, FormGroup, Input, Alert } from "reactstrap";
 import { GoogleLoginButton } from "react-social-login-buttons";
 import { useAuth } from "../contexts/AuthContext";
+import { auth, provider } from "../../firebase/Firebase";
 import { Link, useHistory } from "react-router-dom";
+import "../css/Auth.css";
 
 const Register = () => {
   const emailRef = useRef();
@@ -32,11 +34,17 @@ const Register = () => {
     setLoading(false);
   }
 
+  const signIn = () => {
+    auth.signInWithPopup(provider).catch((err) => {
+      alert(err.message);
+    });
+  }
+
   return (
     <section className="login">
-      <h1 className="text-center pt-3 font-weight-bold">KolayWMS</h1>
       {error && <Alert variant="danger">{error}</Alert>}
       <Form className="login-form" onSubmit={handleSubmit}>
+        <h1 className="text-center pt-3 font-weight-bold">KolayWMS</h1>
         <FormGroup id="email">
           <Input
             className="input"
@@ -67,15 +75,16 @@ const Register = () => {
             ref={passwordRef}
           />
         </FormGroup>
-        <Button disabled={loading} className="w-100" type="submit">
+        <Button disabled={loading} className="button" type="submit">
           Sign Up
         </Button>
+        <hr/>
         <div className="text-center pt-3">OR</div>
-        <GoogleLoginButton className="mt-3 mb-3" />
+        <GoogleLoginButton onClick={signIn} className="mt-3 mb-3" />
+        <div className="w-100 text-center mt-2">
+          Already have an account? <Link to="/login">Log In</Link>
+        </div>
       </Form>
-      <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log In</Link>
-      </div>
     </section>
   );
 };

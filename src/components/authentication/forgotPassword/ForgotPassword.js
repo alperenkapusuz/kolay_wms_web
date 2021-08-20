@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import { Button, Form, FormGroup, Input, Alert } from "reactstrap";
 import { useAuth } from "../contexts/AuthContext";
-import { GoogleLoginButton } from "react-social-login-buttons";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "../css/Auth.css";
 
 const Login = () => {
   const emailRef = useRef();
@@ -28,10 +28,10 @@ const Login = () => {
   }
   return (
     <section className="login">
-      <h1 className="text-center pt-3 font-weight-bold">KolayWMS</h1>
       {error && <Alert variant="danger">{error}</Alert>}
       {message && <Alert variant="success">{message}</Alert>}
       <Form className="login-form" onSubmit={handleSubmit}>
+        <h1 className="text-center pt-3 font-weight-bold">KolayWMS</h1>
         <FormGroup id="email">
           <Input
             className="input"
@@ -42,16 +42,16 @@ const Login = () => {
             ref={emailRef}
           />
         </FormGroup>
-        <Button disabled={loading} className="w-100" type="submit">
+        <Button disabled={loading} className="button" type="submit">
           Reset Password
         </Button>
         <div className="w-100 text-center mt-3">
-            <Link to="/login">Login</Link>
+          <Link to="/login">Login</Link>
+        </div>
+        <div className="w-100 text-center mt-2">
+          Need an account? <Link to="/register">Sign Up</Link>
         </div>
       </Form>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/register">Sign Up</Link>
-      </div>
     </section>
   );
 };
