@@ -21,7 +21,7 @@ const Login = () => {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      history.push("/");
+      history.push("/mainmenu");
     } catch {
       setError("Failed to log in");
     }
@@ -29,11 +29,19 @@ const Login = () => {
     setLoading(false);
   }
 
-  const signIn = () => {
-    auth.signInWithPopup(provider).catch((err) => {
-      alert(err.message);
-    });
-  };
+  async function googleSignIn() {
+    try {
+      setError("");
+      setLoading(true);
+      await auth.signInWithPopup(provider).catch((err) => {
+          console.log(provider);
+          alert(err.message);
+      });
+      history.push("/mainmenu");
+    } catch {
+      setError("Failed to log in");
+    }
+  }
 
   return (
     <div>
@@ -69,7 +77,7 @@ const Login = () => {
             </div>
             <hr />
             <div className="text-center pt-1">OR</div>
-            <GoogleLoginButton onClick={signIn} className="mt-3 mb-3" />
+            <GoogleLoginButton onClick={googleSignIn} className="mt-3 mb-3" />
             <div className="w-100 text-center mt-2"></div>
             <div className="w-100 text-center mt-2">
               Need an account? <Link to="/register">Sign Up</Link>

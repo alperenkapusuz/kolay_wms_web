@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Register from "../authentication/register/Register";
 import Login from "../authentication/login/Login";
 import ForgotPassword from "../authentication/forgotPassword/ForgotPassword"
+import MainMenu from "../mainmenu/MainMenu";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
               <Route path="/register" component={Register} />
               <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />
+              <Route path="/mainmenu" component={MainMenu} />
             </Switch>
           </AuthProvider>
         </Router>
