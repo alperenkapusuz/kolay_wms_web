@@ -28,11 +28,20 @@
     padding: 15px 10px;
     border-radius: 40px;
     margin: 5px;
+    background-color: #f42d0f50;
+}
+
+.login .login-form h2{
+    color: #F42F0F;
+}
+
+.login h1{
+    color: #F42F0F;
 }
 
 .login .login-form .button{
     padding: 15px 10px;
-    background-color: #5AAC44;
+    background-color: #F42F0F;
     width: 100%;
     border-radius: 40px;
     margin: 5px;

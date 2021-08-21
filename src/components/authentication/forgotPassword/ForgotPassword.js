@@ -31,7 +31,6 @@ const Login = () => {
       <Card>
         <Card.Body className="login">
           <h1 className="text-center pt-3 font-weight-bold">KolayWMS</h1>
-
           <Form onSubmit={handleSubmit} className="login-form">
             <h2 className="text-center mb-4">Password Reset</h2>
             {error && <Alert variant="danger">{error}</Alert>}
@@ -52,7 +51,7 @@ const Login = () => {
               <Link to="/login">Login</Link>
             </div>
             <div className="w-100 text-center mt-2">
-              Need an account? <Link to="/signup">Sign Up</Link>
+              Need an account? <Link to="/register">Sign Up</Link>
             </div>
           </Form>
         </Card.Body>
