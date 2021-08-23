@@ -1,10 +1,12 @@
 import React from 'react'
-import Navi from './Navi'
+import Dashboard from './dashboard/Dashboard'
+import Navi from './navi/Navi'
 
 const MainMenu = () => {
     return (
         <div>
             <Navi/>
+            <Dashboard/>
         </div>
     )
 }
