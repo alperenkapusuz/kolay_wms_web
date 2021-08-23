@@ -1,9 +1,10 @@
 import React from 'react'
+import Navi from './Navi'
 
 const MainMenu = () => {
     return (
         <div>
-            <h1>Hello World</h1>
+            <Navi/>
         </div>
     )
 }

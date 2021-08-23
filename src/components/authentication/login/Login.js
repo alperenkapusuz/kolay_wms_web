@@ -9,7 +9,9 @@ import "../css/Auth.css";
 const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
+  
   const { login } = useAuth();
+
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
@@ -34,7 +36,6 @@ const Login = () => {
       setError("");
       setLoading(true);
       await auth.signInWithPopup(provider).catch((err) => {
-          console.log(provider);
           alert(err.message);
       });
       history.push("/mainmenu");
