@@ -6,6 +6,7 @@ import Register from "../authentication/register/Register";
 import Login from "../authentication/login/Login";
 import ForgotPassword from "../authentication/forgotPassword/ForgotPassword"
 import MainMenu from "../mainmenu/MainMenu";
+import AddProduct from "../mainmenu/addProduct/AddProduct";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />
               <Route path="/mainmenu" component={MainMenu} />
+              <Route path="/addproduct" component={AddProduct}/>
             </Switch>
           </AuthProvider>
         </Router>

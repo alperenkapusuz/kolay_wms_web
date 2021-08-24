@@ -20,7 +20,7 @@ const Navi = () => {
           <Nav className="ml-auto" navbar>
             <NavItem>
               <NavLink>
-                <Link to="/saveproduct">Ürün ekle</Link>
+                <Link to="/addproduct">Ürün ekle</Link>
               </NavLink>
             </NavItem>
           </Nav>
