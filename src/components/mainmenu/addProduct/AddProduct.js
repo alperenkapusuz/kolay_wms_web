@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input} from "reactstrap";
-import { db } from "../../authentication/firebase/Firebase";
+import { db,auth } from "../../authentication/firebase/Firebase";
 import Navi from "../navi/Navi";
 
 const AddProduct = () => {
@@ -12,13 +12,15 @@ const AddProduct = () => {
   
   const addToFirestore = (e) => {
       e.preventDefault()
-      db.collection("items").doc(id).set({
+      auth.onAuthStateChanged(user=>{
+         db.collection(user.uid).doc(id).set({
           brand:brand,
           name:name,
           price:price,
           quentity:quentity
+      }) 
       })
-
+      
       setId("");
       setBrand("");
       setName("");

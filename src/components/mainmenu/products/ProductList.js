@@ -1,21 +1,26 @@
 import { useEffect, useState } from "react";
-import { db } from "../../authentication/firebase/Firebase";
-import { Table } from "reactstrap";
+import { db, auth } from "../../authentication/firebase/Firebase";
+import { Table, Button } from "reactstrap";
 
 function ProductList() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    db.collection("items").onSnapshot((snapshot) => {
-      setItems(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
-      );
+    auth.onAuthStateChanged((user) => {
+      db.collection(user.uid).onSnapshot((snapshot) => {
+        setItems(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+        );
+      });
     });
   }, []);
-  console.log(items);
+
+  const deleteItems = () => {
+    db.collection("items").doc(`${items.id}`).delete();
+  };
 
   return (
     <div>
@@ -27,6 +32,7 @@ function ProductList() {
             <th>NAME</th>
             <th>PRICE</th>
             <th>QUENTITY</th>
+            <th></th>
           </tr>
         </thead>
 
@@ -38,6 +44,9 @@ function ProductList() {
               <td>{name}</td>
               <td>{price}</td>
               <td>{quentity}</td>
+              <td>
+                <Button onClick={deleteItems}>Delete</Button>
+              </td>
             </tr>
           ))}
         </tbody>

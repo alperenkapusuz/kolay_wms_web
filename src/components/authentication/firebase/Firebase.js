@@ -19,6 +19,9 @@ const auth = firebase.auth();
 const storage = firebase.storage();
 const db = firebase.firestore();
 const fs = firebase
+//uid
+
+
 
 //google
 const provider = new firebase.auth.GoogleAuthProvider();
