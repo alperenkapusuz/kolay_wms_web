@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { db, auth } from "../../authentication/firebase/Firebase";
-import { Table, Button } from "reactstrap";
+import { Table } from "reactstrap";
 
 function ProductList() {
   const [items, setItems] = useState([]);
@@ -18,10 +18,8 @@ function ProductList() {
     });
   }, []);
 
-  const deleteItems = () => {
-    db.collection("items").doc(`${items.id}`).delete();
-  };
 
+    
   return (
     <div>
       <Table striped>
@@ -32,7 +30,6 @@ function ProductList() {
             <th>NAME</th>
             <th>PRICE</th>
             <th>QUENTITY</th>
-            <th></th>
           </tr>
         </thead>
 
@@ -43,10 +40,7 @@ function ProductList() {
               <td>{brand}</td>
               <td>{name}</td>
               <td>{price}</td>
-              <td>{quentity}</td>
-              <td>
-                <Button onClick={deleteItems}>Delete</Button>
-              </td>
+              <td>{quentity}</td>              
             </tr>
           ))}
         </tbody>
