@@ -1,0 +1,22 @@
+.navbar{
+    width: 100%;
+    height: 100%;
+    background-color: #F42F0F;;
+    border-radius: 5px;
+}
+
+.navbar .kolaywms{
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 150%;
+}
+
+.navbar .addproduct{
+    color:white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 100%;
+}

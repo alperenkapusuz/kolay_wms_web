@@ -1,17 +1,16 @@
-.login{
+.card{
     width: 100%;
-    min-height: 100vh;
+    height: auto;
     padding: 0 20px;
     background: #FFFFFF;
     display: flex;
-    background:url('/src/components/images/welcome.png');
+    background:url('/src/components/images/maintenance.png');
     background-repeat :no-repeat;
     background-position: bottom left;
     background-size:30%;
-    
 }
 
-.login .login-form{
+.card .form{
     padding: 25px 40px;
     margin: auto;
     width: 100%;
@@ -24,22 +23,23 @@
     box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
 }
 
-.login .login-form .input{
-    padding: 15px 10px;
+.form .label{
+    color: #F42F0F;
+    margin-left: 10px;
+    font-size: large;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.form .input{
+    padding: 7px 10px;
     border-radius: 40px;
     margin: 5px;
     background-color: #f42d0f50;
 }
 
-.login .login-form h2{
-    color: #F42F0F;
-}
-
-.login h1{
-    color: #F42F0F;
-}
-
-.login .login-form .button{
+.form .button{
     padding: 15px 10px;
     background-color: #F42F0F;
     width: 100%;

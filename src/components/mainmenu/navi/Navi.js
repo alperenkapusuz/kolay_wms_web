@@ -8,19 +8,20 @@ import {
   NavItem,
   NavLink,
 } from "reactstrap";
+import "./Navi.css"
 
 const Navi = () => {
   return (
     <div>
-      <Navbar color="dark" light expand="md">
+      <Navbar className="navbar" light expand="md">
         <NavbarBrand>
-          <Link to="/mainmenu">Kolay WMS</Link>
+          <Link className="kolaywms" to="/mainmenu">Kolay WMS</Link>
         </NavbarBrand>
         <Collapse navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
               <NavLink>
-                <Link to="/addproduct">Ürün ekle</Link>
+                <Link className="addproduct" to="/addproduct">Ürün ekle</Link>
               </NavLink>
             </NavItem>
           </Nav>
