@@ -40,6 +40,14 @@ const AddProduct = () => {
     setQuentity("");
   };
 
+  const removeItem = () => {
+    auth.onAuthStateChanged((user) => {
+      db.collection(user.uid).doc(id).delete()
+    })
+  }
+
+
+
   return (
     <div>
       <Navi />
@@ -106,6 +114,9 @@ const AddProduct = () => {
               ADD
             </Button>
             {error && <Alert variant="danger">{error}</Alert>}
+            <Button className="button" onClick={removeItem}>
+              delete
+            </Button>
           </Form>
         </CardBody>
       </Card>
